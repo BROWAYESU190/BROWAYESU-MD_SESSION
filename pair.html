@@ -3,19 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toxic MD Pairing Code</title>
+  <title>BROWAYESU-MD Pairing Code (Christmas Galaxy Edition)</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
+    /* --- Christmas Color Palette --- */
+    :root {
+      --christmas-red: #ff3333; /* Bright Red */
+      --christmas-green: #00cc66; /* Bright Green */
+      --christmas-gold: #ffcc00; /* Gold/Yellow */
+      --text-color: #f0f8ff; /* Snow White/Off-White */
+      --box-bg-dark: rgba(25, 10, 10, 0.95);
+      --box-bg-light: rgba(15, 5, 5, 0.95);
+    }
+
     body {
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       margin: 0;
-      background: url('https://files.catbox.moe/eojuys.jpg') no-repeat center center; /* Removed 'fixed' */
-      background-size: cover; /* Ensures the image covers the viewport without moving */
+      /* --- GALAXY IMAGE BACKGROUND --- */
+      background: url('https://images.unsplash.com/photo-1508200057065-c7e497f53f1f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+      background-size: cover;
       font-family: 'Segoe UI', Arial, sans-serif;
-      color: #c0d0ff;
+      color: var(--text-color);
       overflow: hidden;
     }
     body::before {
@@ -25,7 +36,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(5, 15, 30, 0.6);
+      /* Dark overlay with slight red tint for Christmas theme over galaxy */
+      background: rgba(10, 0, 0, 0.7);
       z-index: -1;
     }
 
@@ -48,13 +60,14 @@
 
     .box {
       position: relative;
-      background: linear-gradient(135deg, rgba(20, 30, 50, 0.95), rgba(15, 25, 45, 0.95));
+      /* Box uses semi-transparent gradient backgrounds */
+      background: linear-gradient(135deg, var(--box-bg-dark), var(--box-bg-light));
       padding: 40px;
       border-radius: 20px;
       text-align: center;
-      border: 2px solid rgba(0, 170, 255, 0.5);
-      box-shadow: 0 10px 25px rgba(0, 50, 150, 0.4), 0 0 20px rgba(0, 170, 255, 0.3);
-      backdrop-filter: blur(8px);
+      border: 2px solid rgba(0, 204, 102, 0.7);
+      box-shadow: 0 10px 25px rgba(100, 0, 0, 0.4), 0 0 20px rgba(0, 204, 102, 0.5);
+      backdrop-filter: blur(8px); /* Crucial for glass/transparent effect */
       animation: glowPulse 4s infinite alternate, borderPulse 6s infinite;
       display: flex;
       flex-direction: column;
@@ -64,22 +77,48 @@
     }
 
     .box:hover {
-      box-shadow: 0 15px 35px rgba(0, 50, 150, 0.6), 0 0 30px rgba(0, 170, 255, 0.5);
+      box-shadow: 0 15px 35px rgba(150, 0, 0, 0.6), 0 0 30px rgba(0, 204, 102, 0.7);
     }
 
     @keyframes glowPulse {
-      0% { box-shadow: 0 10px 25px rgba(0, 50, 150, 0.4), 0 0 20px rgba(0, 170, 255, 0.3); }
-      100% { box-shadow: 0 12px 30px rgba(0, 70, 150, 0.5), 0 0 25px rgba(0, 170, 255, 0.4); }
+      0% { box-shadow: 0 10px 25px rgba(100, 0, 0, 0.4), 0 0 20px rgba(0, 204, 102, 0.5); }
+      100% { box-shadow: 0 12px 30px rgba(150, 0, 0, 0.5), 0 0 25px rgba(0, 204, 102, 0.6); }
     }
 
     @keyframes borderPulse {
-      0% { border-color: rgba(0, 170, 255, 0.5); }
-      50% { border-color: rgba(0, 170, 255, 0.7); }
-      100% { border-color: rgba(0, 170, 255, 0.5); }
+      0% { border-color: rgba(0, 204, 102, 0.5); }
+      50% { border-color: rgba(255, 51, 51, 0.7); }
+      100% { border-color: rgba(0, 204, 102, 0.5); }
     }
 
+    /* --- New Audio Control Button Styling --- */
+    #audio-control {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--christmas-gold);
+        background-color: var(--christmas-red);
+        color: var(--text-color);
+        font-size: 16px;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    }
+
+    #audio-control:hover {
+        background-color: var(--christmas-gold);
+        color: var(--christmas-red);
+        border-color: var(--christmas-red);
+        box-shadow: 0 0 15px rgba(255, 51, 51, 0.7);
+        transform: scale(1.05);
+    }
+    
     #text {
-      color: #c0d0ff;
+      color: var(--text-color);
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -91,10 +130,10 @@
       display: flex;
       gap: 15px;
       margin: 30px 0;
-      background: rgba(25, 40, 70, 0.95);
+      background: rgba(50, 10, 10, 0.95);
       padding: 10px;
       border-radius: 14px;
-      border: 1px solid rgba(0, 170, 255, 0.4);
+      border: 1px solid rgba(0, 204, 102, 0.4);
       width: 100%;
       justify-content: center;
       align-items: center;
@@ -103,8 +142,8 @@
     }
 
     .input-container:hover {
-      border: 1px solid rgba(0, 170, 255, 0.8);
-      box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+      border: 1px solid rgba(255, 51, 51, 0.8);
+      box-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
     }
 
     .input-container::after {
@@ -112,7 +151,7 @@
       position: absolute;
       width: 0;
       height: 0;
-      background: rgba(0, 170, 255, 0.5);
+      background: rgba(255, 204, 0, 0.5);
       border-radius: 50%;
       transition: all 0.3s ease;
       pointer-events: none;
@@ -122,7 +161,6 @@
       width: 100px;
       height: 100px;
       opacity: 0;
-      transform: translate(-50%, -50%);
       animation: ripple 0.5s ease-out;
     }
 
@@ -136,8 +174,8 @@
       padding: 16px;
       border: none;
       border-radius: 12px;
-      background: rgba(40, 60, 100, 0.5);
-      color: #ffffff;
+      background: rgba(60, 20, 20, 0.5);
+      color: var(--text-color);
       font-size: 16px;
       text-align: center;
       max-width: 220px;
@@ -147,79 +185,57 @@
     }
 
     .input-container input::placeholder {
-      color: #a0b8ff;
+      color: #ffd700;
       font-style: italic;
       text-align: center;
     }
 
     .input-container input:focus {
       outline: none;
-      border: 2px solid #00aaff;
-      background: rgba(40, 60, 100, 0.6);
-      box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+      border: 2px solid var(--christmas-red);
+      background: rgba(60, 20, 20, 0.6);
+      box-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
     }
 
     .input-container input:hover {
-      background: rgba(40, 60, 100, 0.7);
-      box-shadow: 0 0 8px rgba(0, 170, 255, 0.3);
+      background: rgba(60, 20, 20, 0.7);
+      box-shadow: 0 0 8px rgba(0, 204, 102, 0.3);
     }
 
     .input-container button {
       padding: 16px 30px;
-      background: linear-gradient(135deg, #00aaff 0%, #2a6fff 100%);
-      color: white;
+      background: linear-gradient(135deg, var(--christmas-gold) 0%, var(--christmas-red) 100%);
+      color: black;
       border: none;
       border-radius: 30px;
       font-size: 16px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 170, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(255, 51, 51, 0.4);
       position: relative;
     }
 
     .input-container button:hover {
-      background: linear-gradient(135deg, #2a6fff 0%, #00aaff 100%);
-      box-shadow: 0 6px 18px rgba(0, 170, 255, 0.5);
+      background: linear-gradient(135deg, var(--christmas-red) 0%, var(--christmas-gold) 100%);
+      box-shadow: 0 6px 18px rgba(255, 51, 51, 0.6);
     }
 
     .input-container button:active {
-      box-shadow: 0 2px 8px rgba(0, 170, 255, 0.2);
+      box-shadow: 0 2px 8px rgba(255, 51, 51, 0.3);
       transform: scale(0.95);
-    }
-
-    .input-container button::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 0;
-      background: rgba(0, 170, 255, 0.5);
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: all 0.3s ease;
-      pointer-events: none;
-    }
-
-    .input-container button.touched::after {
-      width: 80px;
-      height: 80px;
-      opacity: 0;
-      animation: ripple 0.5s ease-out;
     }
 
     h3 {
       position: relative;
-      color: #c0d0ff;
       font-size: 34px;
       font-weight: 900;
       margin: 15px 0;
-      text-shadow: 0 2px 8px rgba(0, 50, 150, 0.5);
-      background: linear-gradient(45deg, #00aaff, #2a6fff);
+      background: linear-gradient(45deg, var(--christmas-red), var(--christmas-green));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
       animation: textPulse 3s infinite alternate;
     }
 
@@ -228,7 +244,7 @@
     h3::after {
       content: '';
       position: absolute;
-      background: linear-gradient(90deg, transparent, rgba(0, 170, 255, 0.8), transparent);
+      background: linear-gradient(90deg, transparent, rgba(0, 204, 102, 0.8), transparent);
       z-index: -1;
     }
 
@@ -259,8 +275,8 @@
     }
 
     @keyframes textPulse {
-      0% { text-shadow: 0 2px 8px rgba(0, 50, 150, 0.5); }
-      100% { text-shadow: 0 4px 10px rgba(0, 170, 255, 0.7); }
+      0% { text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); }
+      100% { text-shadow: 0 4px 10px rgba(255, 51, 51, 0.7); }
     }
 
     h3::after {
@@ -271,7 +287,7 @@
       transform: translateX(-50%);
       width: 65%;
       height: 3px;
-      background: linear-gradient(90deg, transparent, rgba(0, 170, 255, 0.7), transparent);
+      background: linear-gradient(90deg, transparent, var(--christmas-gold), transparent);
       animation: underlinePulse 3s infinite alternate;
     }
 
@@ -281,15 +297,15 @@
     }
 
     .fa-user {
-      color: #c0d0ff;
+      color: var(--text-color);
       font-size: 28px;
       margin-bottom: 15px;
       transition: box-shadow 0.3s ease, color 0.3s ease;
     }
 
     .fa-user:hover {
-      color: #00aaff;
-      box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+      color: var(--christmas-gold);
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
     }
 
     #pair {
@@ -303,7 +319,7 @@
     }
 
     #pair a, #pair font {
-      color: #c0d0ff;
+      color: var(--text-color);
       font-size: 20px;
       font-weight: bold;
       opacity: 0;
@@ -312,8 +328,8 @@
     }
 
     #pair a:hover, #pair font:hover {
-      color: #00aaff;
-      box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+      color: var(--christmas-red);
+      box-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
     }
 
     @keyframes slideIn {
@@ -322,7 +338,7 @@
     }
 
     #copy {
-      color: #ffffff;
+      color: var(--text-color);
       font-weight: bold;
       font-size: 20px;
       user-select: none;
@@ -330,22 +346,22 @@
     }
 
     #copy:hover {
-      color: #00aaff;
-      box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+      color: var(--christmas-gold);
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
     }
 
     /* Copy Button Styling */
     .copy-button {
       padding: 12px 24px;
       background: rgba(0, 0, 0, 0.8);
-      color: #00aaff;
-      border: 1px solid rgba(0, 170, 255, 0.5);
+      color: var(--christmas-red);
+      border: 1px solid rgba(0, 204, 102, 0.5);
       border-radius: 30px;
       font-size: 14px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+      box-shadow: 0 0 10px rgba(0, 204, 102, 0.3);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -356,44 +372,18 @@
 
     .copy-button i {
       font-size: 16px;
-      color: #00aaff;
+      color: var(--christmas-red);
       transition: color 0.3s ease;
     }
 
     .copy-button:hover {
       background: rgba(0, 0, 0, 0.9);
-      border-color: rgba(0, 170, 255, 0.8);
-      box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+      border-color: rgba(255, 51, 51, 0.8);
+      box-shadow: 0 0 15px rgba(255, 51, 51, 0.5);
     }
 
     .copy-button:hover i {
-      color: #2a6fff;
-    }
-
-    .copy-button:active {
-      box-shadow: 0 0 5px rgba(0, 170, 255, 0.2);
-      transform: scale(0.95);
-    }
-
-    .copy-button::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 0;
-      background: rgba(0, 170, 255, 0.5);
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: all 0.3s ease;
-      pointer-events: none;
-    }
-
-    .copy-button.touched::after {
-      width: 80px;
-      height: 80px;
-      opacity: 0;
-      animation: ripple 0.5s ease-out;
+      color: var(--christmas-gold);
     }
 
     .copy-button.copied {
@@ -407,12 +397,7 @@
       color: #28a745;
     }
 
-    .copy-button.copied::before {
-      content: '✓ ';
-      font-size: 16px;
-    }
-
-    /* Enhanced Loading Animation with Ring Balls */
+    /* Enhanced Loading Animation with Ring Balls: Green/Red/Gold */
     .loader {
       display: none;
       width: 50px;
@@ -424,10 +409,10 @@
       position: absolute;
       width: 10px;
       height: 10px;
-      background: #00aaff;
+      background: var(--christmas-green);
       border-radius: 50%;
       animation: rotateBalls 2s infinite ease-in-out;
-      box-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+      box-shadow: 0 0 5px rgba(0, 204, 102, 0.5);
     }
 
     .loader .ball:nth-child(1) { animation-delay: 0s; }
@@ -439,27 +424,27 @@
     @keyframes rotateBalls {
       0% {
         transform: rotate(0deg) translateX(20px) scale(1);
-        background: #00aaff;
+        background: var(--christmas-green);
         opacity: 0.8;
       }
       25% {
         transform: rotate(90deg) translateX(20px) scale(1.2);
-        background: #2a6fff;
+        background: var(--christmas-red);
         opacity: 1;
       }
       50% {
         transform: rotate(180deg) translateX(20px) scale(1);
-        background: #00aaff;
+        background: var(--christmas-gold);
         opacity: 0.8;
       }
       75% {
         transform: rotate(270deg) translateX(20px) scale(1.2);
-        background: #2a6fff;
+        background: var(--christmas-red);
         opacity: 1;
       }
       100% {
         transform: rotate(360deg) translateX(20px) scale(1);
-        background: #00aaff;
+        background: var(--christmas-green);
         opacity: 0.8;
       }
     }
@@ -498,12 +483,23 @@
         padding: 10px 20px;
         font-size: 13px;
       }
+      #audio-control {
+          top: 5px;
+          right: 5px;
+          width: 35px;
+          height: 35px;
+          font-size: 14px;
+      }
     }
   </style>
 </head>
 <body>
+  <audio id="christmas-song" src="https://files.catbox.moe/px5rjg.m4a" preload="auto" loop></audio>
+  
   <div class="container">
     <div class="box" id="box">
+        <button id="audio-control"><i class="fas fa-music"></i></button>
+
       <div id="text">
         <i class="fa fa-user"></i>
         <h3>BROWAYESU-MD PAIRING CODE</h3>
@@ -524,6 +520,64 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
   <script>
+    // --- Audio Control Setup ---
+    const song = document.getElementById('christmas-song');
+    const audioControl = document.getElementById('audio-control');
+    const submitButton = document.getElementById('submit');
+    const numberInput = document.getElementById('number');
+    let isPlaying = false;
+
+    // Toggle Play/Pause and update button icon
+    function toggleAudio() {
+        if (isPlaying) {
+            song.pause();
+            audioControl.innerHTML = '<i class="fas fa-music"></i>';
+            isPlaying = false;
+        } else {
+            song.play().then(() => {
+                audioControl.innerHTML = '<i class="fas fa-pause"></i>';
+                isPlaying = true;
+            }).catch(error => {
+                // Handle cases where play is still blocked even on explicit click
+                console.error("Failed to play audio:", error);
+                alert("The browser is blocking media playback. Please check your browser settings.");
+                audioControl.innerHTML = '<i class="fas fa-music"></i>';
+                isPlaying = false;
+            });
+        }
+    }
+    
+    // Autoplay attempt (still needed for some non-mobile browsers)
+    function attemptAutoplay() {
+        song.play().then(() => {
+            audioControl.innerHTML = '<i class="fas fa-pause"></i>';
+            isPlaying = true;
+        }).catch(error => {
+            console.log("Autoplay blocked. User must click the play button or interact.");
+            // Keep the music icon visible if blocked
+            audioControl.innerHTML = '<i class="fas fa-music"></i>';
+            isPlaying = false;
+        });
+    }
+
+    // Bind the visible button to the toggle function
+    audioControl.addEventListener('click', toggleAudio);
+
+    // Initial autoplay attempt on load
+    attemptAutoplay(); 
+
+    // Add listeners to main elements as fallback for browsers that require interaction
+    // We only want these to trigger the first play if the song is currently paused/blocked.
+    function fallbackPlayHandler() {
+        if (!isPlaying) {
+            attemptAutoplay(); 
+        }
+    }
+
+    submitButton.addEventListener('click', fallbackPlayHandler, { once: true });
+    numberInput.addEventListener('focus', fallbackPlayHandler, { once: true });
+    // --- End Audio Control Setup ---
+
     let a = document.getElementById("pair");
     let b = document.getElementById("submit");
     let c = document.getElementById("number");
@@ -547,34 +601,32 @@
       e.preventDefault();
       b.classList.add('touched');
       if (!c.value) {
-        a.innerHTML = '<a style="color:#c0d0ff;font-weight:bold">Enter your WhatsApp number with Country Code</a><br><br>';
+        a.innerHTML = '<a style="color:#f0f8ff;font-weight:bold">Enter your WhatsApp number with Country Code</a><br><br>';
       } else {
-        const Toxic_Tech = c.value.replace(/[^0-9]/g, "");
-        if (Toxic_Tech.length < 11) {
-          a.innerHTML = '<a style="color:#ff6b6b;font-weight:bold">Invalid Number</a><br><br>';
+        const BROWAYESU_Tech = c.value.replace(/[^0-9]/g, "");
+        if (BROWAYESU_Tech.length < 11) {
+          a.innerHTML = '<a style="color:#ff3333;font-weight:bold">Invalid Number</a><br><br>';
         } else {
           let bb = "";
           let bbc = "";
-          const cc = Toxic_Tech.split('');
-          cc.map(a => {
-            bbc += a;
-            if (bbc.length == 3) {
-              bb += " " + a;
-            } else if (bbc.length == 8) {
-              bb += " " + a;
+          const cc = BROWAYESU_Tech.split('');
+          cc.map(char => {
+            bbc += char;
+            if (bbc.length === 3 || bbc.length === 8) {
+              bb += " " + char;
             } else {
-              bb += a;
+              bb += char;
             }
           });
           c.value = "+" + bb;
-          c.style = "color:white;font-size:16px";
+          c.style = "color:#f0f8ff;font-size:16px";
           waitingMessage.style.display = 'block';
           a.innerHTML = '';
-          let { data } = await axios(`/code?number=${Toxic_Tech}`);
+          let { data } = await axios(`/code?number=${BROWAYESU_Tech}`);
           waitingMessage.style.display = 'none';
           let code = data.code || "Service Unavailable";
           a.innerHTML = `
-            <font id="copy" style="color:#ffffff;font-weight:bold" size="5">CODE: <span style="color:white;font-weight:bold">${code}</span></font>
+            <font id="copy" style="color:#f0f8ff;font-weight:bold" size="5">CODE: <span style="color:#f0f8ff;font-weight:bold">${code}</span></font>
             <button class="copy-button" onclick="Copy(this)"><i class="fas fa-copy"></i> Copy Code</button>
           `;
         }
