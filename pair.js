@@ -6,7 +6,7 @@ const PastebinAPI = require('pastebin-js');
 const pastebin = new PastebinAPI('EMWTMkQAVfJa9kM-MRUrxd5Oku1U7pgL');
 
 const {
-    default: Toxic_Tech,
+    default: browayesu_Tech,
     useMultiFileAuthState,
     delay,
     makeCacheableSignalKeyStore,
@@ -80,7 +80,7 @@ router.get('/', async (req, res) => {
       ◈━━━━━━━◈  
   SESSION CONNECTED
 
-│❒ The long code above is your Session ID. Please copy and store it safely, as you'll need it to deploy your Toxic-MD bot! 🔐
+│❒ The long code above is your Session ID. Please copy and store it safely, as you'll need it to deploy your BROWAYESU-MD bot! 🔐
 
 │❒ Need help? Reach out to us:
 
