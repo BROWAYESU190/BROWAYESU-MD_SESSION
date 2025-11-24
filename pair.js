@@ -6,7 +6,7 @@ const PastebinAPI = require('pastebin-js');
 const pastebin = new PastebinAPI('EMWTMkQAVfJa9kM-MRUrxd5Oku1U7pgL');
 
 const {
-    default: browayesu_Tech,
+    default: Toxic_Tech,
     useMultiFileAuthState,
     delay,
     makeCacheableSignalKeyStore,
